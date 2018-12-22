@@ -1,0 +1,9 @@
+<slot (slotchange)="slotChange($event)"></slot>
+
+<mat-form-field>
+  <mat-select>
+    <mat-option *ngFor="let item of items" [value]="item.value">
+      {{item.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
