@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, DoBootstrap, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { MyNavComponent } from './my-nav/my-nav.component';
@@ -22,7 +22,8 @@ import { MyOptionComponent } from './my-option/my-option.component';
    ],
    imports: [
       BrowserModule,
-      BrowserAnimationsModule,
+      //BrowserAnimationsModule,
+      NoopAnimationsModule,
       FormsModule,
       MatSelectModule,
       LayoutModule,

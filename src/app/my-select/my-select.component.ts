@@ -20,6 +20,7 @@ export class MySelectComponent implements OnInit {
     const assigned: Node[] = $event.target.assignedNodes();
     const options = assigned.filter(f => f.nodeName === 'MY-OPTION');
     this.items = options.map(o => ({value: o['value'], viewValue: o['text']}))
+    console.debug('slotChange', this.items);
   }
 
 }
