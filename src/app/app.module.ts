@@ -34,11 +34,12 @@ import { MyOptionComponent } from './my-option/my-option.component';
       MatListModule
    ],
    providers: [],
-   bootstrap: [],
+   bootstrap: [AppComponent],
    schemas: [
       CUSTOM_ELEMENTS_SCHEMA
    ],
    entryComponents: [
+      // AppComponent,
       DemoComponent,
       MySelectComponent,
       MyOptionComponent
@@ -59,7 +60,7 @@ export class AppModule implements DoBootstrap {
 
     const optionElm = createCustomElement(MyOptionComponent, {injector: this.injector });
     customElements.define('my-option', optionElm);
-    
-  } 
+
+  }
 
 }
