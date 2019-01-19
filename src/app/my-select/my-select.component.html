@@ -3,6 +3,7 @@
 
 <mat-form-field>
   <mat-select>
+    <mat-option [value]="'fake-value'">FAKE VALUE</mat-option>
     <mat-option *ngFor="let item of items" [value]="item.value">
       {{item.viewValue}}
     </mat-option>
