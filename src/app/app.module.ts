@@ -8,9 +8,8 @@ import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DemoComponent } from './demo-component/demo-component.component';
 import { createCustomElement } from '@angular/elements';
-import { MySelectComponent } from './my-select/my-select.component';
 import { MyOptionComponent } from './my-option/my-option.component';
-
+import { MySelectComponent } from './my-select/my-select.component';
 
 @NgModule({
    declarations: [
@@ -48,19 +47,19 @@ import { MyOptionComponent } from './my-option/my-option.component';
 export class AppModule implements DoBootstrap {
 
   constructor(private injector: Injector) {
+   const demoElm = createCustomElement(DemoComponent, {injector: this.injector });
+   customElements.define('wc-demo', demoElm);
+
+   const selectElm = createCustomElement(MySelectComponent, {injector: this.injector });
+   customElements.define('my-select', selectElm);
+
+   const optionElm = createCustomElement(MyOptionComponent, {injector: this.injector });
+   customElements.define('my-option', optionElm);
 
   }
 
   ngDoBootstrap(): void {
-    const demoElm = createCustomElement(DemoComponent, {injector: this.injector });
-    customElements.define('wc-demo', demoElm);
-
-    const selectElm = createCustomElement(MySelectComponent, {injector: this.injector });
-    customElements.define('my-select', selectElm);
-
-    const optionElm = createCustomElement(MyOptionComponent, {injector: this.injector });
-    customElements.define('my-option', optionElm);
-
+   
   }
 
 }
